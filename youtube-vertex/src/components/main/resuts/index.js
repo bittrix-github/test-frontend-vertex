@@ -5,6 +5,21 @@ import fetchSearch from '../../../functions/fetchSearch';
 
 
 
+import {
+    
+    ResultsContainerStyle,
+    ResultsItemStyle,
+    ResultsVideoThumb,
+    ResultsVideoInfo,
+    ResultsVideoTitle,
+    ResultsVideoDescription
+
+}
+
+from './styles';
+
+
+
 
 const Results = (props) => {
 
@@ -28,15 +43,43 @@ const Results = (props) => {
 
 
 
-    if(data.length) {return (
+
+    const videoResults = data.map(
+
+        video => (
+
+            <ResultsItemStyle key={video.etag}>
+                                
+                <ResultsVideoThumb>
+                    <img src = {video.snippet.thumbnails.medium.url} alt = 'thumbnail'></img>                    
+                </ResultsVideoThumb>
+
+                <ResultsVideoInfo>
+                    <ResultsVideoTitle>{video.snippet.title}</ResultsVideoTitle>
+                    <ResultsVideoDescription>{video.snippet.description}</ResultsVideoDescription>
+                </ResultsVideoInfo>
+
+            </ResultsItemStyle>
+    
+        )
+    
+    )    
+
+
+
+    return (
 
         <>
 
-            <span>dados recebidos</span>
+            <ResultsContainerStyle className = 'results__container'>
+
+                {videoResults}
+
+            </ResultsContainerStyle>
         
         </>        
 
-    );}
+    );
 
 };
 

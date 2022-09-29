@@ -23,8 +23,6 @@ const Main = () => {
 
         setInputValue(event)
 
-        console.log(inputValue)
-
     }
 
 
