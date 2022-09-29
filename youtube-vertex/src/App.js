@@ -1,5 +1,9 @@
 import React from 'react';
 
+import Home from './pages/home';
+
+import GlobalStyle from './styles';
+
 
 
 
@@ -9,7 +13,9 @@ const App = () => {
 
     <div className = 'app'>
 
-      <span>hello world</span>
+      <GlobalStyle />
+
+      <Home />
 
     </div>
 
