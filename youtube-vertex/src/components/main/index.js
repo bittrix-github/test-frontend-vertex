@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 
 
@@ -13,13 +13,31 @@ import { MainStyles } from './styles';
 const Main = () => {
 
 
+    const [inputValue, setInputValue] = useState('');
+
+
+
+    function inputHandler(event){
+
+        setInputValue(event)
+
+        console.log(inputValue)
+
+    }
+
+
+
     return(
 
         <>
 
             <MainStyles>
 
-                <SearchItems />
+                <SearchItems
+                
+                    inputValueHandler = {inputHandler}
+                
+                />
             
             </MainStyles>
 

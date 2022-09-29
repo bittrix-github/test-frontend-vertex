@@ -17,7 +17,7 @@ import { SearchContainerStyle } from './styles';
 
 
 
-const SearchItems = () => {
+const SearchItems = (props) => {
 
 
     const [translate, setTranslate] = useState(false);
@@ -35,6 +35,8 @@ const SearchItems = () => {
         if(event.keyCode === 13 && targetValue) {
 
             setTranslate(true)
+
+            return(props.inputValueHandler(targetValue))
             
         }
     
@@ -55,6 +57,8 @@ const SearchItems = () => {
         if(buttonGetInputValue) {            
 
             setTranslate(true)
+
+            return(props.inputValueHandler(buttonGetInputValue))
 
         }
         
