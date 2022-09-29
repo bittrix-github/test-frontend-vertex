@@ -14,6 +14,7 @@ import {
             PlayerVideoTitle,
             PlayerInfoContainer,
             PlayerVideoDescription,
+            BackButtonStyle
         
         }
         
@@ -44,6 +45,17 @@ const Player = (props) => {
         }
 
     }, [props.playVideoId])
+
+
+
+
+    function backButtonHandler(){
+
+        setShowPlayer(false)
+
+        setVideoData([])
+
+    }
 
 
     
@@ -79,6 +91,12 @@ const Player = (props) => {
                     <span>{video.snippet.description}</span>
 
                 </PlayerVideoDescription>
+
+                <BackButtonStyle onClick = {() => backButtonHandler()}>
+
+                    <img src="https://s2.svgbox.net/octicons.svg?ic=arrow-left&color=EEEEEE" width="28" height="28" alt = 'botão back'></img>
+
+                </BackButtonStyle>
 
             </PlayerContainerStyle>
 

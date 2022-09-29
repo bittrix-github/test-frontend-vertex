@@ -93,3 +93,15 @@ export const PlayerVideoDescription = styled.div`
     }
 
 `;
+
+
+export const BackButtonStyle = styled.div`
+
+    position: absolute;
+
+    top: 2rem;
+    left: calc(1.5rem + 2vw);
+
+    cursor: pointer;
+
+`;
