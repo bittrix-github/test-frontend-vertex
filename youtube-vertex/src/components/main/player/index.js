@@ -1,6 +1,9 @@
 import React, { useState, useEffect} from 'react';
 
 
+import ReactPlayer from 'react-player/lazy';
+
+
 import playVideo from '../../../functions/fetchPlay';
 
 
@@ -53,8 +56,7 @@ const Player = (props) => {
 
                 <PlayerVideoContainer className = 'player__video--container'>
 
-                    {/* <ReactPlayer url = {`https://www.youtube-nocookie.com/embed/${video.id}`} width = '100%' height = '100%' controls/> */}
-                    {video.id}
+                    <ReactPlayer url = {`https://www.youtube-nocookie.com/embed/${video.id}`} width = '100%' height = '100%' controls/>
 
                 </PlayerVideoContainer>
 
