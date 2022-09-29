@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 import SearchItems from './search';
 
-import Results from './resuts';
+import Results from './results';
 
 
 

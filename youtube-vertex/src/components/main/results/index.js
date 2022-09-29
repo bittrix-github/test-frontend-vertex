@@ -4,17 +4,17 @@ import React, { useState, useEffect} from 'react';
 import fetchSearch from '../../../functions/fetchSearch';
 
 
-
 import {
     
-    ResultsContainerStyle,
-    ResultsItemStyle,
-    ResultsVideoThumb,
-    ResultsVideoInfo,
-    ResultsVideoTitle,
-    ResultsVideoDescription
+            ResultsContainerStyle,
+            ResultsItemStyle,
+            ResultsVideoThumb,
+            ResultsVideoInfo,
+            ResultsVideoTitle,
+            ResultsVideoDescription,
+            ResultsItemMask
 
-}
+        }
 
 from './styles';
 
@@ -38,8 +38,17 @@ const Results = (props) => {
         }
 
     }, [props.inputValueAdd])
-    
 
+
+
+
+    function playHandler(event){
+
+        const videoId = event.target.id
+
+        console.log(videoId)
+
+    }
 
 
 
@@ -59,6 +68,8 @@ const Results = (props) => {
                     <ResultsVideoDescription>{video.snippet.description}</ResultsVideoDescription>
                 </ResultsVideoInfo>
 
+                <ResultsItemMask id= {video.id.videoId} onClick = {(event) => playHandler(event)}></ResultsItemMask>
+
             </ResultsItemStyle>
     
         )
@@ -71,7 +82,7 @@ const Results = (props) => {
 
         <>
 
-            <ResultsContainerStyle className = 'results__container'>
+            <ResultsContainerStyle>
 
                 {videoResults}
 
