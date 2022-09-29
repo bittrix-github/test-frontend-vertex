@@ -5,11 +5,11 @@ import { SearchButtonStyle } from './styles';
 
 
 
-const SearchButton = () => {
+const SearchButton = (props) => {
 
     return(
 
-        <SearchButtonStyle type = 'submit'>Buscar</SearchButtonStyle>
+        <SearchButtonStyle type = 'submit' onClick = {() => props.buttonClickHandler()} >Buscar</SearchButtonStyle>
     
     )
 

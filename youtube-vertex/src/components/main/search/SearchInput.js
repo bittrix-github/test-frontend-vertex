@@ -5,13 +5,16 @@ import { SearchInputStyle } from './styles';
 
 
 
-const SearchInput = () => {
+const SearchInput = (props) => {
 
     return(
 
         <SearchInputStyle
 
-            type = 'text' placeholder = 'Pesquisar'>
+            type = 'text' placeholder = 'Pesquisar'
+            onKeyDown = {(event) => props.enterKeyHandler(event)}
+            onChange = {(event) => props.searchButtonHelper(event)}>
+
 
         </SearchInputStyle>
     

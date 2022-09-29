@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 
 import SearchInput from './SearchInput';
@@ -20,13 +20,63 @@ import { SearchContainerStyle } from './styles';
 const SearchItems = () => {
 
 
+    const [translate, setTranslate] = useState(false);
+
+
+
+
+    let buttonGetInputValue = ''
+
+
+    function translateSearchInput(event) {
+
+        let targetValue = event.target.value
+
+        if(event.keyCode === 13 && targetValue) {
+
+            setTranslate(true)
+            
+        }
+    
+    }
+
+
+    function buttonHelper (event) {
+
+        let targetValue = event.target.value
+
+        buttonGetInputValue = targetValue
+
+    }
+
+
+    function translateSearchButton() {
+
+        if(buttonGetInputValue) {            
+
+            setTranslate(true)
+
+        }
+        
+    }
+
+
     return(
 
-        <SearchContainerStyle>
+        <SearchContainerStyle className = {translate && 'clicked'}>
 
-            <SearchInput />
+            <SearchInput 
+            
+                enterKeyHandler = {translateSearchInput}
+                searchButtonHelper = {buttonHelper}
 
-            <SearchButton />
+            />
+
+            <SearchButton
+
+                buttonClickHandler = {translateSearchButton}
+
+            />
 
         </SearchContainerStyle>
     

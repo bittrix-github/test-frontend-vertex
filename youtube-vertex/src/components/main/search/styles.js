@@ -19,7 +19,13 @@ export const SearchContainerStyle = styled.div`
     max-width: 50rem;
     height: 4rem;
 
-    transition: all 2s ease-in-out;
+    transition: all 1.7s ease-in-out;
+
+    &.clicked {
+
+        transform: translate(calc(50vw - 50%), calc(8.5vh - 50%));
+
+    }
 
 `;
 
