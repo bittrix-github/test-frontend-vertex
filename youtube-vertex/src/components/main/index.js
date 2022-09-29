@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 
 import SearchItems from './search';
 
+import Results from './resuts';
+
 
 
 import { MainStyles } from './styles';
@@ -37,6 +39,12 @@ const Main = () => {
                 
                     inputValueHandler = {inputHandler}
                 
+                />
+
+                <Results 
+                
+                    inputValueAdd = {inputValue}
+
                 />
             
             </MainStyles>
