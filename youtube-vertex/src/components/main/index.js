@@ -25,7 +25,9 @@ const Main = () => {
 
     function inputHandler(event) {
 
-        setInputValue(event)
+        if (event) {setInputValue(event)}
+
+        else if (!event) {setInputValue('')}
 
     }
 

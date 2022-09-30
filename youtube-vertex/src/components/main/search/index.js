@@ -39,6 +39,14 @@ const SearchItems = (props) => {
             return(props.inputValueHandler(targetValue))
             
         }
+
+        else if(event.keyCode === 13 && !targetValue) {
+
+            setTranslate(false)
+
+            return(props.inputValueHandler(''))
+            
+        }
     
     }
 
@@ -59,6 +67,14 @@ const SearchItems = (props) => {
             setTranslate(true)
 
             return(props.inputValueHandler(buttonGetInputValue))
+
+        }
+
+        else if(!buttonGetInputValue) {
+
+            setTranslate(false)
+
+            return(props.inputValueHandler(''))
 
         }
         

@@ -37,6 +37,12 @@ const Results = (props) => {
 
         }
 
+        else if(!props.inputValueAdd) {
+
+            setData([])
+
+        }
+
     }, [props.inputValueAdd])
 
 
