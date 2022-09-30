@@ -21,6 +21,14 @@ export const PlayerContainerStyle = styled.div`
     flex-direction: column;
     align-items: center;
 
+    @media (min-width: 1025px) {
+
+        top: 2vh;
+
+        height: 88vh;
+
+    }
+
 `;
 
 
@@ -29,6 +37,14 @@ export const PlayerVideoContainer = styled.div`
     width: 100%;
     max-width: 47rem;
     min-height: 35%;
+
+    @media (min-width: 1025px) {
+
+        width: 50%;
+        max-width: 70rem;
+        height: 50%;
+
+    }
 
 `;
 
@@ -42,6 +58,17 @@ export const PlayerVideoTitle = styled.div`
 
     font-size: 1.6rem;
     font-weight: bold;
+
+    @media (min-width: 1025px) {
+
+        width: 50%;
+        max-width: 70rem;
+
+        margin-top: 3rem;
+
+        font-size: 1.8rem;
+
+    }
 
 `;
 
@@ -58,6 +85,15 @@ export const PlayerInfoContainer = styled.div`
     align-items: center;
 
     font-size: 1.4rem;
+
+    @media (min-width: 1025px) {
+
+        width: 50%;
+        max-width: 70rem;
+
+        font-size: 1.5rem;
+
+    }
 
 `;
 
@@ -90,6 +126,15 @@ export const PlayerVideoDescription = styled.div`
     &::-webkit-scrollbar-thumb {
         background-color:  #313131;
         outline: 1px solid rgb(0, 0, 0, 0.3);
+    }
+
+    @media (min-width: 1025px) {
+
+        width: 50%;
+        max-width: 70rem;
+
+        font-size: 1.3rem;
+
     }
 
 `;

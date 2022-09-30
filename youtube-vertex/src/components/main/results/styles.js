@@ -32,6 +32,20 @@ export const ResultsContainerStyle = styled.div`
         outline: 1px solid rgb(0, 0, 0, 0.3);
     }
 
+    @media (min-width: 1025px) {
+
+        width: 75vw;
+        display: grid;
+        grid-template-columns: repeat(3, 22vw);
+        grid-template-rows: repeat(2, 28rem);
+        row-gap: 3vw;
+        column-gap: 0vw;
+        margin-left: 12.5vw;
+        margin-bottom: 0rem;
+        padding-top: 5rem;
+    
+    }
+
 `;
 
 
@@ -51,15 +65,42 @@ export const ResultsItemStyle = styled.div`
 
     color: #FFFFFF;
 
-    &:first-child{
+    &:first-child {
 
         margin-top: calc(-2rem + 4vw);
 
     }
 
-    &:last-child{
+    &:last-child {
 
         margin-bottom: 4vw;
+
+    }
+
+    @media (min-width: 1025px) {
+
+        justify-content: flex-start;
+        align-items: flex-end;
+    
+        width: 100%;
+        max-width: 30rem;
+        height: 100%;
+    
+        margin-top: 0;
+
+        margin: auto;
+
+        &:first-child {
+
+            margin-top: 0;
+    
+        }
+    
+        &:last-child {
+    
+            margin-bottom: 0;
+    
+        }        
 
     }
 
@@ -96,6 +137,14 @@ export const ResultsVideoInfo = styled.div`
 
     margin-top: 0.8rem;
 
+    @media (min-width: 1025px) {
+
+        margin-top: 2rem;
+
+        justify-content: flex-start;
+
+    }
+
 `;
 
 
@@ -111,6 +160,14 @@ export const ResultsVideoDescription = styled.div`
 
     font-size: 1.1rem;
     color: #AAAAAA;
+
+    @media (min-width: 1025px) {
+
+        font-size: 1.3rem;
+
+        margin-top: 1rem;
+
+    }
 
 `;
 

@@ -44,9 +44,9 @@ const Results = (props) => {
 
     function playHandler(event){
 
-        const videoId = event.target.id
+        let videoId = event.target.id
 
-        return(props.playHandler(videoId))
+        return[(props.playHandler(videoId))]
 
     }
 

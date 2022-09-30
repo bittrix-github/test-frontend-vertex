@@ -55,6 +55,8 @@ const Player = (props) => {
 
         setVideoData([])
 
+        return[(props.backHandler())]
+
     }
 
 
@@ -68,7 +70,7 @@ const Player = (props) => {
 
                 <PlayerVideoContainer className = 'player__video--container'>
 
-                    <ReactPlayer url = {`https://www.youtube-nocookie.com/embed/${video.id}`} width = '100%' height = '100%' controls/>
+                    <ReactPlayer url = {`https://www.youtube.com/embed/${video.id}`} width = '100%' height = '100%' controls/>
 
                 </PlayerVideoContainer>
 

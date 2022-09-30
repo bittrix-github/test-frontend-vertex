@@ -17,9 +17,13 @@ export const HeaderContainer = styled.div`
 
     background-color: #202020;
 
-    // border-bottom: 2px solid #373737;
-
     color: #888888;
+
+    @media (min-width: 1025px) {
+
+        height: 7vh;
+
+    }
 
 `;
 

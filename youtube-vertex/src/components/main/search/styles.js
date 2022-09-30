@@ -27,6 +27,16 @@ export const SearchContainerStyle = styled.div`
 
     }
 
+    @media (min-width: 1025px) {
+
+        &.clicked {
+
+            transform: translate(calc(50vw - 50%), calc(10vh - 50%));
+    
+        }
+
+    }
+
 `;
 
 

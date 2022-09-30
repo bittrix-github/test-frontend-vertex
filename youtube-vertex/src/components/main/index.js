@@ -23,16 +23,22 @@ const Main = () => {
 
 
 
-    function inputHandler(event){
+    function inputHandler(event) {
 
         setInputValue(event)
 
     }
 
 
-    function playVideoHandler(event){
+    function playVideoHandler(event) {
 
         setPlayVideo(event)
+
+    }
+
+    function backHandler() {
+
+        setPlayVideo('')
 
     }
 
@@ -60,6 +66,7 @@ const Main = () => {
                 <Player
                 
                     playVideoId = {playVideo}
+                    backHandler = {backHandler}
                 
                 />
             
