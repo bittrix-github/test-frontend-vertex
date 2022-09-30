@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Teste Front-End Vertex
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Olá! Sou [Pedro Bittencourt](https://www.linkedin.com/in/bittrix/), 32 anos, Físico e Engenheiro Eletricista pela Uerj.
 
-## Available Scripts
+Este _readme_ contém informações sobre o desenvolvimento da aplicação tida como teste para o processo seletivo **desenvolvedor front-end** da [Vertex Digital](https://vertexdigital.co/).
 
-In the project directory, you can run:
+## Informações e aspectos sobre o desenvolvimento da aplicação
 
-### `npm start`
+- Sistema operacional: Windows 10 Pro 64 bits;
+- Editor de texto: Visual Studio Code (Versão 1.71.2);
+- [Node.js](https://nodejs.org/en/) (Versão 16.17.0) ;
+- Desenvolvido em [React](https://reactjs.org/);
+- Preset com [Create React App](https://create-react-app.dev/).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Pacotes instalados
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [styled components](https://styled-components.com/);
+- [Axios](https://github.com/axios/axios);
+- [ReactPlayer](https://www.npmjs.com/package/react-player).
 
-### `npm test`
+## Como rodar a aplicação
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Localmente:
 
-### `npm run build`
+- Ter Node.js instalado;
+- Explorar a pasta _youtube-vertex_ no seu editor de texto de preferência;
+- No terminal do editor de texto, executar _npm start_;
+- A aplicação será inicializada em seu navegador padrão (ver **Notas**) em http://localhost:3000/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Online:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Acesse a url [teste-vertex-bittrix.surge.sh](https://teste-vertex-bittrix.surge.sh) no seu navegador de preferência (ver **Notas**).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> Observação: a aplicação foi buildada para produção e feito deploy em [Surge.sh](https://surge.sh/).
 
-### `npm run eject`
+## Bugs
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Em alguns momentos (não consegui identificar um padrão), quando algum vídeo é tocado, um erro é mostrado no console:<br>
+  _`Failed to execute www-widgetapi.js:963 'postMessage' on 'DOMWindow': The target origin provided ('https://www.youtube.com') does not match the recipient window's origin ('http://localhost:3000').`_<br>
+  Encontrei alguns posts em fóruns pela internet onde pessoas que utilizam essa mesma API relatam receber esse erro no console, mas nenhum apresentou solução. Aparentemente, é algo originado na própria API.<br>
+  Uma possível solução apresentada não me pareceu viável, já que a origem da chamada da API deveria ser hard coded no player:<br>
+  `https://www.youtube.com/embed/{video.id}?showinfo=0&enablejsapi=1&origin={URL_DO_HOST}`<br>
+  Trocar o host da aplicação implicaria em alterações diretamente no código;<br><br>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Quando alguma das respostas para a pesquisa é um canal do YouTube, a API não retorna valores suficientes para tocar algum vídeo (como o vídeo mais recente postado no canal, por exemplo). A resposta pode ser identificada entre um vídeo ou um canal pela propriedade _item.id.kind_ (`'youtube#video'` ou `'youtube#channel'`) e poderia ser suprimida na lista de resultados. Entretanto, optei por mantê-las, já que a API retorna _thumbnail_ e _título_ do canal.<br><br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- A API não retorna, na propriedade _item.statistics_, a quantidade de _dislikes_ do vídeo (exigência do projeto). As propriedades retornadas são:<br>
+  --- _commentCount_: quantidade de comentários no vídeo;
+  --- _favoriteCount_: quantidade de favoritos do vídeo;
+  --- _likeCount_: quantidade de curtidas do vídeo;
+  --- _viewCount_: quantidade de visualizações do vídeo.<br>
+  Optei, arbitrariamente, por incluir a quantidade de comentários no vídeo ( `item.statistics.commentCount` );<br><br>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Rodando a aplicação no navegador de um dispositivo móvel (via [teste-vertex-bittrix.surge](https://teste-vertex-bittrix.surge.sh)), o modo tela cheia do **ReactPlayer**, automaticamente, rotaciona o vídeo para o modo paisagem (não há parâmetros no pacote para previnir esse comportamento padrão). Ao sair do modo tela cheia, alguns estilos são quebrados na página. Ao retornar à página com os resultados, os estilos são restaurados ao normal.
 
-## Learn More
+## Notas
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Desenvolvimento otimizado para Google Chrome (Versão 106.0.5249.62) versão desktop;<br><br>
+- 795px min-height;<br><br>
+- 390px min-width (iPhone 12 Pro do _Chrome DevTools_).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Versões futuras da aplicação
 
-### Code Splitting
+- Mostrar mais de 5 resultados através da propriedade `&maxResults={NUMERO_DE_RESULTADOS}` na url da API;
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Criar toggle de light/dark mode;
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Responsividade completa.
