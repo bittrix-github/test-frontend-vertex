@@ -23,6 +23,8 @@ export const PlayerContainerStyle = styled.div`
 
     @media (min-width: 1025px) {
 
+        padding-top: calc(5rem + 3vw);
+
         top: 2vh;
 
         height: 88vh;
@@ -91,7 +93,9 @@ export const PlayerInfoContainer = styled.div`
         width: 50%;
         max-width: 70rem;
 
-        font-size: 1.5rem;
+        margin-top: 3rem;
+
+        font-size: 1.4rem;
 
     }
 
@@ -132,6 +136,9 @@ export const PlayerVideoDescription = styled.div`
 
         width: 50%;
         max-width: 70rem;
+        max-height: 15rem;
+
+        margin-top: 3rem;
 
         font-size: 1.3rem;
 
