@@ -1,27 +1,14 @@
-import React from 'react';
+import React from 'react'
+import { SearchInputStyle } from './styles'
 
-
-import { SearchInputStyle } from './styles';
-
-
-
-const SearchInput = (props) => {
-
+const SearchInput = props => {
     return(
-
         <SearchInputStyle
-
             type = 'text' placeholder = 'Pesquisar'
-            onKeyDown = {(event) => props.enterKeyHandler(event)}
-            onChange = {(event) => props.searchButtonHelper(event)}>
-
-
+            onKeyDown = { event => props.enterKeyHandler(event) }
+            onChange = { event => props.searchButtonHelper(event) }>
         </SearchInputStyle>
-    
     )
+}
 
-};
-
-
-
-export default SearchInput;
+export default SearchInput

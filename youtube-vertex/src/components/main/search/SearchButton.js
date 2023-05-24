@@ -1,20 +1,10 @@
-import React from 'react';
+import React from 'react'
+import { SearchButtonStyle } from './styles'
 
-
-import { SearchButtonStyle } from './styles';
-
-
-
-const SearchButton = (props) => {
-
+const SearchButton = props => {
     return(
-
-        <SearchButtonStyle type = 'submit' onClick = {() => props.buttonClickHandler()} >Buscar</SearchButtonStyle>
-    
+        <SearchButtonStyle type='submit' onClick = { () => props.buttonClickHandler() } >Buscar</SearchButtonStyle>
     )
+}
 
-};
-
-
-
-export default SearchButton;
+export default SearchButton

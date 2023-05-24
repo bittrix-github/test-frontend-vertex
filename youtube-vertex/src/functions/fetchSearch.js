@@ -1,27 +1,15 @@
-import axios from "axios";
+import axios from "axios"
 
-
-
-const fetchSearch = (searchInput) => {
-
-    const API_KEY = 'AIzaSyBwSX5T5mDVFRKVpInrlk0YjKCiOO4WmpQ';
-
+const fetchSearch = searchInput => {
+    const API_KEY = 'AIzaSyBwSX5T5mDVFRKVpInrlk0YjKCiOO4WmpQ'
     const link = `https://www.googleapis.com/youtube/v3/search?part=id,snippet&q=${searchInput}&key=${API_KEY}`
 
-    
     return(
-    
         axios
-            
-            .get(`${link}`)
-
-            .then((response) => {console.log(response.data.items); return response.data.items})
-
-            .catch(error => console.log(error))
-
+            .get( `${link}` )
+            .then( response => { return response.data.items } )
+            .catch( error => console.log(error) )
     )
+}
 
-};
-
-
-export default fetchSearch;
+export default fetchSearch

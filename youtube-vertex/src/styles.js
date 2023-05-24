@@ -1,30 +1,20 @@
-import { createGlobalStyle } from "styled-components";
-
+import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', sans-serif;
+    }
 
-body {
+    * {
+        box-sizing: border-box;
+    }
 
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-}
+    html {
+        font-size: 62.5%;
+        overflow-x: hidden;
+    }
+`
 
-* {
-
-    box-sizing: border-box;
-    
-}
-
-html {
-
-    font-size: 62.5%;
-
-    overflow-x: hidden;
-
-}
-
-`;
-
-
-export default GlobalStyle;
+export default GlobalStyle

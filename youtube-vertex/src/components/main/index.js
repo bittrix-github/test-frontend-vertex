@@ -1,85 +1,46 @@
-import React, { useState } from 'react';
-
-
-
-import SearchItems from './search';
-
-import Results from './results';
-
-import Player from './player';
-
-
-
-import { MainStyles } from './styles';
-
-
+import React, { useState } from 'react'
+import SearchItems from './search'
+import Results from './results'
+import Player from './player'
+import { MainStyles } from './styles'
 
 const Main = () => {
-
-
-    const [inputValue, setInputValue] = useState('');
-
-    const [playVideo, setPlayVideo] = useState('');
-
-
+    const [ inputValue, setInputValue ] = useState('')
+    const [ playVideo, setPlayVideo ] = useState('')
 
     function inputHandler(event) {
-
-        if (event) {setInputValue(event)}
-
-        else if (!event) {setInputValue('')}
-
+        if ( event ) { 
+            setInputValue(event)
+        } else if ( !event ) {
+            setInputValue('')
+        }
     }
 
-
     function playVideoHandler(event) {
-
         setPlayVideo(event)
-
     }
 
     function backHandler() {
-
         setPlayVideo('')
-
     }
 
-
-
     return(
+        <MainStyles>
+            <SearchItems
+                inputValueHandler = { inputHandler }
+            />
 
-        <>
+            <Results 
+                inputValueAdd = { inputValue }
+                playHandler = { playVideoHandler }
+            />
 
-            <MainStyles>
+            <Player
+                playVideoId = { playVideo }
+                backHandler = { backHandler }
+            />
+        </MainStyles>
+    )
+}
 
-                <SearchItems
-                
-                    inputValueHandler = {inputHandler}
-                
-                />
-
-                <Results 
-                
-                    inputValueAdd = {inputValue}
-                    playHandler = {playVideoHandler}
-                
-                    />
-    
-                <Player
-                
-                    playVideoId = {playVideo}
-                    backHandler = {backHandler}
-                
-                />
-            
-            </MainStyles>
-
-        </>
-
-    );
-
-};
-
-
-
-export default Main;
+export default Main
